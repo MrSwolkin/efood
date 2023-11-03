@@ -12,32 +12,40 @@ import {
 
 type Props = {
   image: string
-  infosTag: string[]
+  infoTag: string[]
   title: string
-  score: string
+  score: number
   description: string
+  id: number
 }
 
-const Card = ({ title, infosTag, image, score, description }: Props) => (
-  <CardContainer>
-    <img src={image} alt="" />
-    <Infos>
-      {infosTag.map((info) => (
-        <Tag key={info}>{info}</Tag>
-      ))}
-    </Infos>
-    <Conteudo>
-      <Titulo>
-        <h4>{title}</h4>
-        <Score>
-          <h4>{score}</h4>
-          <img src={iconStar} alt="estala amerela" />
-        </Score>
-      </Titulo>
-      <p>{description}</p>
-      <ButtonLink to={'/ProductPage'}> Saiba mais</ButtonLink>
-    </Conteudo>
-  </CardContainer>
-)
+const Card = ({ title, infoTag, image, score, description, id }: Props) => {
+  const getDescription = (description: string) => {
+    if (description.length > 190) {
+      return description.slice(0, 195) + '...'
+    }
+  }
+  return (
+    <CardContainer>
+      <img src={image} alt="" />
+      <Infos>
+        {infoTag.map((info) => (
+          <Tag key={info}>{info}</Tag>
+        ))}
+      </Infos>
+      <Conteudo>
+        <Titulo>
+          <h4>{title}</h4>
+          <Score>
+            <h4>{score}</h4>
+            <img src={iconStar} alt="estala amerela" />
+          </Score>
+        </Titulo>
+        <p>{getDescription(description)}</p>
+        <ButtonLink to={`/ProductPage/${id}`}> Saiba mais</ButtonLink>
+      </Conteudo>
+    </CardContainer>
+  )
+}
 
 export default Card

@@ -1,11 +1,18 @@
 import bannerProfile from '../../asset/images/italian-profil.png'
 import { ContainerProfile, Titles } from './styles'
 
-const BannerProfile = () => (
-  <ContainerProfile style={{ backgroundImage: `url(${bannerProfile})` }}>
+import { Restaurants } from '../../pages/Home'
+
+type Props = {
+  bannerRestaurants: Restaurants
+}
+const BannerProfile = ({ bannerRestaurants }: Props) => (
+  <ContainerProfile
+    style={{ backgroundImage: `url(${bannerRestaurants.capa})` }}
+  >
     <Titles className="container">
-      <span>Italiana</span>
-      <h3>La Dolce Vita Trattoria</h3>
+      <span>{bannerRestaurants.tipo}</span>
+      <h3>{bannerRestaurants.titulo}</h3>
     </Titles>
   </ContainerProfile>
 )

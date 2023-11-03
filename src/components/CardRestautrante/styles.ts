@@ -15,6 +15,7 @@ export const CardContainer = styled.div`
     width: 100%;
     height: 217px;
     max-height: 100%;
+    object-fit: cover;
   }
 `
 

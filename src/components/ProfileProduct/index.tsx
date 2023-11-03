@@ -11,13 +11,22 @@ type Props = {
   description: string
 }
 
-const CardProduct = ({ image, title, description }: Props) => (
-  <CardProductContainer>
-    <img src={image} alt="" />
-    <CardProducTitle>{title}</CardProducTitle>
-    <CardProductDescription>{description}</CardProductDescription>
-    <CardProductButton to={'/'}>Adicionar ao carrinho</CardProductButton>
-  </CardProductContainer>
-)
+const ProfileList = ({ image, title, description }: Props) => {
+  const getDescription = (description: string) => {
+    if (description.length > 111) {
+      return description.slice(0, 110) + '...'
+    }
+  }
+  return (
+    <CardProductContainer>
+      <img src={image} alt="" />
+      <CardProducTitle>{title}</CardProducTitle>
+      <CardProductDescription>
+        {getDescription(description)}
+      </CardProductDescription>
+      <CardProductButton>Mais detalhes</CardProductButton>
+    </CardProductContainer>
+  )
+}
 
-export default CardProduct
+export default ProfileList
