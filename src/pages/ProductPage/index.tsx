@@ -1,21 +1,17 @@
 import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+
 import HeaderProductProfile from '../../components/HeaderProductProfile'
 import BannerProfile from '../../components/ProfileBanner'
 import ProfileList from '../../components/ProfileList'
+import { useGetCarpadioItemQuery } from '../../services/api'
 
 import { Restaurants } from '../Home'
+import Cart from '../../components/Cart'
 
 const ProductPage = () => {
   const { id } = useParams()
 
-  const [restaurante, setRestaurante] = useState<Restaurants>()
-
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setRestaurante(res))
-  }, [id])
+  const { data: restaurante } = useGetCarpadioItemQuery(id!)
 
   if (!restaurante) {
     return <h3>Carregando...</h3>
@@ -25,6 +21,7 @@ const ProductPage = () => {
       <HeaderProductProfile />
       <BannerProfile bannerRestaurants={restaurante} />
       <ProfileList items={restaurante.cardapio} />
+      <Cart />
     </>
   )
 }

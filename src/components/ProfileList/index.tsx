@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import ProfileProduct from '../ProfileProduct'
 import fechar from '../../asset/images/icons/icon-close.png'
 import {
@@ -11,15 +12,16 @@ import {
   ButtonModal
 } from './styles'
 import { CardapioItem } from '../../pages/Home'
+import { add, open } from '../../store/reducers/cart'
 
-type Props = {
-  items: CardapioItem[]
-}
 interface modalState extends CardapioItem {
   isVisible: boolean
 }
+type Props = {
+  items: CardapioItem[]
+}
 
-const formatPrice = (preco = 0) => {
+export const formatPrice = (preco = 0) => {
   return new Intl.NumberFormat('pt-br', {
     style: 'currency',
     currency: 'BRL'
@@ -27,6 +29,11 @@ const formatPrice = (preco = 0) => {
 }
 
 const ProfileList = ({ items }: Props) => {
+  const dispatch = useDispatch()
+  const addToCart = (item: CardapioItem) => {
+    dispatch(add(item))
+    dispatch(open())
+  }
   const [modal, setModal] = useState<modalState>({
     isVisible: false,
     id: 0,
@@ -76,7 +83,10 @@ const ProfileList = ({ items }: Props) => {
         ))}
       </List>
       <Modal className={modal.isVisible ? 'visible' : ''}>
-        <ModalContent>
+        <ModalContent
+          className="container
+          "
+        >
           <div>
             <img src={modal.foto} alt="" />
           </div>
@@ -84,7 +94,7 @@ const ProfileList = ({ items }: Props) => {
             <h3>{modal.nome}</h3>
             <p>{modal.descricao}</p>
             <span>Serve: {modal.porcao}</span>
-            <ButtonModal>
+            <ButtonModal onClick={() => addToCart(modal)}>
               Adicionar ao carrinho - {formatPrice(modal.preco)}
             </ButtonModal>
           </DetailsModal>

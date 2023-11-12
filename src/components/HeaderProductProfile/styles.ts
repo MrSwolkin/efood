@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoints } from '../../styles'
 
 export const BannerImage = styled.div`
   width: 100%;
@@ -7,10 +8,17 @@ export const BannerImage = styled.div`
 export const BannerContente = styled.div`
   display: flex;
   padding: 42px 0;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
 
-  img {
-    margin-left: 70px;
+  @media (max-width: ${breakpoints.tablet}) {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  a {
+    font-weight: 900;
+    font-size: 18px;
+    cursor: pointer;
   }
 `

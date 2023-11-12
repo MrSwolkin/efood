@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const ContainerProfile = styled.div`
   max-width: 100%;
@@ -26,6 +26,10 @@ export const Titles = styled.div`
   padding-bottom: 24px;
   color: ${cores.branca};
   font-size: 32px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 24px;
+  }
 
   span {
     font-weight: 100;

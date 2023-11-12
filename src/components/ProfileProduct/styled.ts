@@ -40,4 +40,5 @@ export const CardProductButton = styled.button`
   font-size: 14px;
   font-weight: 700;
   color: ${cores.salmao};
+  cursor: pointer;
 `
