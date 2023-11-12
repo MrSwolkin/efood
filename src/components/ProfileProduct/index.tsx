@@ -24,7 +24,7 @@ const ProfileList = ({ image, title, description }: Props) => {
       <CardProductDescription>
         {getDescription(description)}
       </CardProductDescription>
-      <CardProductButton>Mais detalhes</CardProductButton>
+      <CardProductButton>Adicionar ao carrinho</CardProductButton>
     </CardProductContainer>
   )
 }

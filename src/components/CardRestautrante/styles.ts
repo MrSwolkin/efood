@@ -6,7 +6,7 @@ import { cores } from '../../styles'
 export const CardContainer = styled.div`
   background-color: ${cores.branca};
   max-width: 480px;
-  height: 400px;
+  height: 380px;
   position: relative;
   border: solid 1px ${cores.salmao};
   border-top: none;
@@ -22,6 +22,9 @@ export const CardContainer = styled.div`
 export const Titulo = styled.div`
   display: flex;
   justify-content: space-between;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
 `
 export const Score = styled.div`
   widht: 60px;

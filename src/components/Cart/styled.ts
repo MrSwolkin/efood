@@ -58,7 +58,9 @@ export const CartItems = styled.li`
   }
 
   p {
+    font-weight: 400;
     font-size: 14px;
+    line-height: 22px;
   }
 
   button {
@@ -77,8 +79,9 @@ export const Price = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 24px 0 16px;
-
   color: ${cores.creme};
+  font-size: 14px;
+  font-weight: bold;
 `
 export const CartButton = styled.button`
   max-width: 344px;

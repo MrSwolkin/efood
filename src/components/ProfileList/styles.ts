@@ -23,9 +23,12 @@ export const List = styled.ul`
 `
 
 export const BotaoFechar = styled.img`
+  position: absolute;
+  top: 8px;
+  right: 8px;
   width: 16px;
   height: 16px;
-  margin: 8px;
+
   cursor: pointer;
 `
 export const Modal = styled.div`
@@ -54,6 +57,7 @@ export const Modal = styled.div`
 `
 
 export const ModalContent = styled.div`
+  position: relative;
   max-width: 1024px;
   display: flex;
   z-index: 1;
@@ -78,9 +82,9 @@ export const ModalContent = styled.div`
 export const DetailsModal = styled.div`
   display: flex;
   flex-direction: column;
+  color: ${cores.branca};
 
   h3 {
-    margin-top: 32px;
     font-size: 18px;
     font-weight: 900;
   }
