@@ -6,7 +6,7 @@ import { cores } from '../../styles'
 export const CardContainer = styled.div`
   background-color: ${cores.branca};
   max-width: 480px;
-  height: 380px;
+  height: 398px;
   position: relative;
   border: solid 1px ${cores.salmao};
   border-top: none;
@@ -40,9 +40,13 @@ export const Score = styled.div`
 `
 
 export const Conteudo = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: ${cores.branca};
   padding: 8px;
   padding-bottom: 8px;
+  // border: solid 1px ${cores.salmao};
+  // border-top: none;
 
   p {
     width: 456px;
@@ -53,12 +57,14 @@ export const Conteudo = styled.div`
   }
 `
 export const ButtonLink = styled(Link)`
+  max-width: 82px;
+  font-size: 14px;
   background-color: ${cores.salmao};
   color: ${cores.creme};
   font-weight: 700;
   padding: 4px 6px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 16px;
+
   text-decoration: none;
 `
 
