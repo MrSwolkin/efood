@@ -57,6 +57,7 @@ export const ButtonLink = styled(Link)`
   color: ${cores.creme};
   font-weight: 700;
   padding: 4px 6px;
+  margin-top: 8px;
   margin-bottom: 8px;
   text-decoration: none;
 `
