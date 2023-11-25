@@ -1,6 +1,7 @@
 import { useGetRestaurantQuery } from '../../services/api'
 import Hero from '../../components/Hero'
 import Listagem from '../../components/Listagem'
+import Loader from '../../components/Loader'
 
 const Home = () => {
   const { data: listHome } = useGetRestaurantQuery()
@@ -13,7 +14,11 @@ const Home = () => {
       </>
     )
   }
-  return <h3>Carregando...</h3>
+  return (
+    <h3>
+      <Loader />
+    </h3>
+  )
 }
 
 export default Home

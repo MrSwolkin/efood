@@ -6,6 +6,7 @@ import BannerProfile from '../../components/ProfileBanner'
 import ProfileList from '../../components/ProfileList'
 import Cart from '../../components/Cart'
 import Checkout from '../Checkout'
+import Loader from '../../components/Loader'
 
 const ProductPage = () => {
   const { id } = useParams()
@@ -13,7 +14,11 @@ const ProductPage = () => {
   const { data: restaurante } = useGetCarpadioItemQuery(id!)
 
   if (!restaurante) {
-    return <h3>Carregando...</h3>
+    return (
+      <h3>
+        <Loader />
+      </h3>
+    )
   }
   return (
     <>
