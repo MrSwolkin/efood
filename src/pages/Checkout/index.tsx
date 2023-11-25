@@ -20,7 +20,7 @@ const Checkout = () => {
   const dispatch = useDispatch()
 
   const [payWithCard, setPayWithCard] = useState(false)
-  const [purchase, { isSuccess, data }] = usePurchaseMutation()
+  const [purchase, { isSuccess, data, isLoading }] = usePurchaseMutation()
 
   const backToCart = () => {
     dispatch(open())
@@ -237,7 +237,9 @@ const Checkout = () => {
                     </div>
                   </S.SplitInputRow>
                   <S.Button type="submit" marginTop="24px">
-                    Finalizar pagamento
+                    {isLoading
+                      ? 'processando pagamento...'
+                      : 'Finalizar pagamento'}
                   </S.Button>
                   <S.Button onClick={() => setPayWithCard(false)}>
                     Voltar para Edição de Endereço
