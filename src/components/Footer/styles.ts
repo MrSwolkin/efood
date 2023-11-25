@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { color } from '../../styles'
 import { Link } from 'react-router-dom'
 
 export const Container = styled.footer`
-  background-color: ${cores.creme};
+  background-color: ${color.cream};
   width: 100%;
   height: 300px;
   margin-top: 120px;

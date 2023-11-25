@@ -1,14 +1,7 @@
 import iconStar from '../../asset/images/star.png'
 import Tag from '../Tag'
 
-import {
-  CardContainer,
-  Titulo,
-  Conteudo,
-  Infos,
-  Score,
-  ButtonLink
-} from './styles'
+import * as S from './styles'
 
 type Props = {
   image: string
@@ -26,25 +19,25 @@ const Card = ({ title, infoTag, image, score, description, id }: Props) => {
     }
   }
   return (
-    <CardContainer>
+    <S.CardContainer>
       <img src={image} alt="" />
-      <Infos>
+      <S.Infos>
         {infoTag.map((info) => (
           <Tag key={info}>{info}</Tag>
         ))}
-      </Infos>
-      <Conteudo>
-        <Titulo>
+      </S.Infos>
+      <S.Conteudo>
+        <S.Titulo>
           <h4>{title}</h4>
-          <Score>
+          <S.Score>
             <h4>{score}</h4>
             <img src={iconStar} alt="estala amerela" />
-          </Score>
-        </Titulo>
+          </S.Score>
+        </S.Titulo>
         <p>{getDescription(description)}</p>
-        <ButtonLink to={`/ProductPage/${id}`}> Saiba mais</ButtonLink>
-      </Conteudo>
-    </CardContainer>
+        <S.ButtonLink to={`/ProductPage/${id}`}> Saiba mais</S.ButtonLink>
+      </S.Conteudo>
+    </S.CardContainer>
   )
 }
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, color } from '../../styles'
 import lixo from '../../asset/images/icons/lixeira-de-reciclagem.png'
 
 export const Overlay = styled.div`
@@ -26,18 +26,31 @@ export const CartContainer = styled.div`
   }
 `
 export const SideBar = styled.aside`
-  background-color: ${cores.salmao};
+  background-color: ${color.lightPink};
   z-index: 1;
   max-width: 360px;
   width: 100%;
   padding: 32px 8px 0;
+
+  p {
+    color: ${color.lightPink};
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+
+    &.empty-text {
+      color: ${color.cream};
+      text-align: center;
+    }
+  }
+
   @media (max-width: ${breakpoints.tablet}) {
     max-width: 300px;
   }
 `
 export const CartItems = styled.li`
   display: flex;
-  background-color: ${cores.creme};
+  background-color: ${color.cream};
   width: 344px;
   padding: 8px;
   max-width: 100%;
@@ -79,7 +92,7 @@ export const Price = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 24px 0 16px;
-  color: ${cores.creme};
+  color: ${color.cream};
   font-size: 14px;
   font-weight: bold;
 `
@@ -88,10 +101,11 @@ export const CartButton = styled.button`
   height: 24px;
   width: 100%;
   padding: 4px;
-  background-color: ${cores.creme};
-  color: ${cores.salmao};
+  background-color: ${color.cream};
+  color: ${color.lightPink};
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
   border: none;
+  cursor: pointer;
 `

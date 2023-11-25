@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, color } from '../../styles'
 
 export const ListContent = styled.div``
 
@@ -62,8 +62,8 @@ export const ModalContent = styled.div`
   display: flex;
   z-index: 1;
   padding: 32px;
-  background-color: ${cores.salmao};
-  color: ${cores.creme};
+  background-color: ${color.lightPink};
+  color: ${color.cream};
   gap: 24px;
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -82,7 +82,7 @@ export const ModalContent = styled.div`
 export const DetailsModal = styled.div`
   display: flex;
   flex-direction: column;
-  color: ${cores.branca};
+  color: ${color.white};
 
   h3 {
     font-size: 18px;
@@ -115,10 +115,10 @@ export const ButtonModal = styled.button`
   max-width: 220px;
   height: 24px;
   padding: 4px 8px;
-  background-color: ${cores.creme};
+  background-color: ${color.cream};
   border: none;
   font-size: 14px;
   font-weight: bold;
-  color: ${cores.salmao};
+  color: ${color.lightPink};
   cursor: pointer;
 `

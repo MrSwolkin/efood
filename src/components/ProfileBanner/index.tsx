@@ -1,20 +1,17 @@
-import bannerProfile from '../../asset/images/italian-profil.png'
-import { ContainerProfile, Titles } from './styles'
-
-import { Restaurants } from '../../pages/Home'
+import * as S from './styles'
 
 type Props = {
   bannerRestaurants: Restaurants
 }
 const BannerProfile = ({ bannerRestaurants }: Props) => (
-  <ContainerProfile
+  <S.ContainerProfile
     style={{ backgroundImage: `url(${bannerRestaurants.capa})` }}
   >
-    <Titles className="container">
+    <S.Titles className="container">
       <span>{bannerRestaurants.tipo}</span>
       <h3>{bannerRestaurants.titulo}</h3>
-    </Titles>
-  </ContainerProfile>
+    </S.Titles>
+  </S.ContainerProfile>
 )
 
 export default BannerProfile

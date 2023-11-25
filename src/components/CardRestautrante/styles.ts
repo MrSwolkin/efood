@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import { cores } from '../../styles'
+import { color } from '../../styles'
 
 export const CardContainer = styled.div`
-  background-color: ${cores.branca};
+  background-color: ${color.white};
   max-width: 480px;
   height: 398px;
   position: relative;
-  border: solid 1px ${cores.salmao};
+  border: solid 1px ${color.lightPink};
   border-top: none;
 
   img {
@@ -42,10 +42,10 @@ export const Score = styled.div`
 export const Conteudo = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${cores.branca};
+  background-color: ${color.white};
   padding: 8px;
   padding-bottom: 8px;
-  // border: solid 1px ${cores.salmao};
+  // border: solid 1px ${color.lightPink};
   // border-top: none;
 
   p {
@@ -59,8 +59,8 @@ export const Conteudo = styled.div`
 export const ButtonLink = styled(Link)`
   max-width: 82px;
   font-size: 14px;
-  background-color: ${cores.salmao};
-  color: ${cores.creme};
+  background-color: ${color.lightPink};
+  color: ${color.cream};
   font-weight: 700;
   padding: 4px 6px;
   margin-top: 16px;

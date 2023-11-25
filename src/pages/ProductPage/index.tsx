@@ -1,12 +1,11 @@
 import { useParams } from 'react-router-dom'
+import { useGetCarpadioItemQuery } from '../../services/api'
 
 import HeaderProductProfile from '../../components/HeaderProductProfile'
 import BannerProfile from '../../components/ProfileBanner'
 import ProfileList from '../../components/ProfileList'
-import { useGetCarpadioItemQuery } from '../../services/api'
-
-import { Restaurants } from '../Home'
 import Cart from '../../components/Cart'
+import Checkout from '../Checkout'
 
 const ProductPage = () => {
   const { id } = useParams()
@@ -22,6 +21,7 @@ const ProductPage = () => {
       <BannerProfile bannerRestaurants={restaurante} />
       <ProfileList items={restaurante.cardapio} />
       <Cart />
+      <Checkout />
     </>
   )
 }

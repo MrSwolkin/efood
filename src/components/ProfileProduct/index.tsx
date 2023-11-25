@@ -1,9 +1,4 @@
-import {
-  CardProductContainer,
-  CardProducTitle,
-  CardProductDescription,
-  CardProductButton
-} from './styled'
+import * as S from './styled'
 
 type Props = {
   image: string
@@ -12,20 +7,20 @@ type Props = {
 }
 
 const ProfileList = ({ image, title, description }: Props) => {
-  const getDescription = (description: string) => {
-    if (description.length > 111) {
-      return description.slice(0, 110) + '...'
+  const getDescription = (text: string) => {
+    if (text.length > 111) {
+      return text.slice(0, 110) + '...'
     }
   }
   return (
-    <CardProductContainer>
+    <S.CardProductContainer>
       <img src={image} alt="" />
-      <CardProducTitle>{title}</CardProducTitle>
-      <CardProductDescription>
+      <S.CardProducTitle>{title}</S.CardProducTitle>
+      <S.CardProductDescription>
         {getDescription(description)}
-      </CardProductDescription>
-      <CardProductButton>Adicionar ao carrinho</CardProductButton>
-    </CardProductContainer>
+      </S.CardProductDescription>
+      <S.CardProductButton>Adicionar ao carrinho</S.CardProductButton>
+    </S.CardProductContainer>
   )
 }
 

@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { GlobalCss } from './styles'
 import Footer from './components/Footer'
 import Rotas from './routes'
-import Cart from './components/Cart'
+
 import { store } from './store'
 
 function App() {
